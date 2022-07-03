@@ -4,6 +4,8 @@ A webpage for converting multiple units.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![](https://cdn.kerrycao.com/images/homepage/projects/multi-convert/preview.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
