@@ -56,17 +56,17 @@ function Distance(prop) {
                 throw Error("invalid type");
         }
 
-        unit !== "ml" ? setMile(meter / 1609.344) : setMile(value);
-        unit !== "yd" ? setYard(meter * 1.09361) : setYard(value);
-        unit !== "ft" ? setFoot(meter * 3.28084) : setFoot(value);
-        unit !== "in" ? setInch(meter * 39.3701) : setInch(value);
-        unit !== "km" ? setKm(meter / 1000) : setKm(value);
-        unit !== "m" ? setM(meter) : setM(value);
-        unit !== "dm" ? setDm(meter * 10) : setDm(value);
-        unit !== "cm" ? setCm(meter * 100) : setCm(value);
-        unit !== "mm" ? setMm(meter * 1000) : setMm(value);
-        unit !== "um" ? setUm(meter * 100000) : setUm(value);
-        unit !== "nm" ? setNm(meter * 100000000) : setNm(value);
+        unit !== "ml" ? setMile(Number((meter / 1609.344).toFixed(15))) : setMile(value);
+        unit !== "yd" ? setYard(Number((meter * 1.09361).toFixed(15))) : setYard(value);
+        unit !== "ft" ? setFoot(Number((meter * 3.28084).toFixed(15))) : setFoot(value);
+        unit !== "in" ? setInch(Number((meter * 39.3701).toFixed(15))) : setInch(value);
+        unit !== "km" ? setKm(Number((meter / 1000).toFixed(15))) : setKm(value);
+        unit !== "m" ? setM(Number((meter).toFixed(15))) : setM(value);
+        unit !== "dm" ? setDm(Number((meter * 10).toFixed(15))) : setDm(value);
+        unit !== "cm" ? setCm(Number((meter * 100).toFixed(15))) : setCm(value);
+        unit !== "mm" ? setMm(Number((meter * 1000).toFixed(15))) : setMm(value);
+        unit !== "um" ? setUm(Number((meter * 100000).toFixed(15))) : setUm(value);
+        unit !== "nm" ? setNm(Number((meter * 100000000).toFixed(15))) : setNm(value);
     }
 
     return (
@@ -77,49 +77,49 @@ function Distance(prop) {
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Kilometer</InputGroup.Text>
-                            <FormControl type={"number"} value={km} onChange={e => distanceInputDetected("km", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={km} onChange={e => distanceInputDetected("km", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>km</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Meter</InputGroup.Text>
-                            <FormControl type={"number"} value={m} onChange={e => distanceInputDetected("m", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={m} onChange={e => distanceInputDetected("m", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>m</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Decimeter</InputGroup.Text>
-                            <FormControl type={"number"} value={dm} onChange={e => distanceInputDetected("dm", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={dm} onChange={e => distanceInputDetected("dm", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>dm</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Centimeter</InputGroup.Text>
-                            <FormControl type={"number"} value={cm} onChange={e => distanceInputDetected("cm", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={cm} onChange={e => distanceInputDetected("cm", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>cm</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Millimeter</InputGroup.Text>
-                            <FormControl type={"number"} value={mm} onChange={e => distanceInputDetected("mm", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={mm} onChange={e => distanceInputDetected("mm", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>mm</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Micrometer</InputGroup.Text>
-                            <FormControl type={"number"} value={um} onChange={e => distanceInputDetected("um", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={um} onChange={e => distanceInputDetected("um", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>μm</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Nanometer</InputGroup.Text>
-                            <FormControl type={"number"} value={nm} onChange={e => distanceInputDetected("nm", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={nm} onChange={e => distanceInputDetected("nm", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>nm</InputGroup.Text>
                         </InputGroup>
                     </Row>
@@ -131,28 +131,28 @@ function Distance(prop) {
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Mile</InputGroup.Text>
-                            <FormControl type={"number"} value={mile} onChange={e => distanceInputDetected("ml", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={mile} onChange={e => distanceInputDetected("ml", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>mi</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Yard</InputGroup.Text>
-                            <FormControl type={"number"} value={yard} onChange={e => distanceInputDetected("yd", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={yard} onChange={e => distanceInputDetected("yd", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>yd</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Foot</InputGroup.Text>
-                            <FormControl type={"number"} value={foot} onChange={e => distanceInputDetected("ft", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={foot} onChange={e => distanceInputDetected("ft", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>ft</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Inch</InputGroup.Text>
-                            <FormControl type={"number"} value={inch} onChange={e => distanceInputDetected("in", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={inch} onChange={e => distanceInputDetected("in", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>in</InputGroup.Text>
                         </InputGroup>
                     </Row>

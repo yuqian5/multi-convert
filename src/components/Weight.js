@@ -40,13 +40,13 @@ function Weight(prop) {
                 throw Error("invalid type");
         }
 
-        unit !== "lb" ? setLb(gram / 453.59237) : setLb(value);
-        unit !== "oz" ? setOz(gram / 28.3495) : setOz(value);
-        unit !== "kg" ? setKg(gram / 1000) : setKg(value);
-        unit !== "g" ? setG(gram) : setG(value);
-        unit !== "mg" ? setMg(gram * 1000) : setMg(value);
-        unit !== "ug" ? setUg(gram * 100000) : setUg(value);
-        unit !== "ng" ? setNg(gram * 100000000) : setNg(value);
+        unit !== "lb" ? setLb(Number((gram / 453.59237).toFixed(9))) : setLb(value);
+        unit !== "oz" ? setOz(Number((gram / 28.3495).toFixed(9))) : setOz(value);
+        unit !== "kg" ? setKg(Number((gram / 1000).toFixed(9))) : setKg(value);
+        unit !== "g" ? setG(Number(gram.toFixed(9))) : setG(value);
+        unit !== "mg" ? setMg(Number((gram * 1000).toFixed(9))) : setMg(value);
+        unit !== "ug" ? setUg(Number((gram * 100000).toFixed(9))) : setUg(value);
+        unit !== "ng" ? setNg(Number((gram * 100000000).toFixed(9))) : setNg(value);
     }
 
     return (
@@ -57,35 +57,35 @@ function Weight(prop) {
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Kilogram</InputGroup.Text>
-                            <FormControl type={"number"} value={kg} onChange={e => weightInputDetected("kg", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={kg} onChange={e => weightInputDetected("kg", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>kg</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Gram</InputGroup.Text>
-                            <FormControl type={"number"} value={g} onChange={e => weightInputDetected("g", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={g} onChange={e => weightInputDetected("g", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>g</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Milligram</InputGroup.Text>
-                            <FormControl type={"number"} value={mg} onChange={e => weightInputDetected("mg", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={mg} onChange={e => weightInputDetected("mg", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>mg</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Microgram</InputGroup.Text>
-                            <FormControl type={"number"} value={ug} onChange={e => weightInputDetected("ug", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={ug} onChange={e => weightInputDetected("ug", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>μg</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Nanogram</InputGroup.Text>
-                            <FormControl type={"number"} value={ng} onChange={e => weightInputDetected("ng", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={ng} onChange={e => weightInputDetected("ng", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>ng</InputGroup.Text>
                         </InputGroup>
                     </Row>
@@ -97,14 +97,14 @@ function Weight(prop) {
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Pound</InputGroup.Text>
-                            <FormControl type={"number"} value={lb} onChange={e => weightInputDetected("lb", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={lb} onChange={e => weightInputDetected("lb", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>lb</InputGroup.Text>
                         </InputGroup>
                     </Row>
                     <Row>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Ounce</InputGroup.Text>
-                            <FormControl type={"number"} value={oz} onChange={e => weightInputDetected("oz", e.target.value)} className={"text-end"}/>
+                            <FormControl type={"number"} value={oz} onChange={e => weightInputDetected("oz", e.target.value)} onFocus={e => e.target.select()} className={"text-end"}/>
                             <InputGroup.Text>oz</InputGroup.Text>
                         </InputGroup>
                     </Row>
